@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="20D64" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="CalendarInfo" representedClassName="CalendarInfo" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="String" defaultValueString="id"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <attribute name="titleImage" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES"/>
+    </entity>
+    <entity name="Content" representedClassName=".Content" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="String">
+            <userInfo>
+                <entry key="key" value="value"/>
+            </userInfo>
+        </attribute>
+        <attribute name="images" optional="YES" attributeType="Transformable" customClassName="[Data]"/>
+        <attribute name="memos" optional="YES" attributeType="Transformable" customClassName="[String]"/>
+        <attribute name="thumnail" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES"/>
+    </entity>
+    <elements>
+        <element name="Content" positionX="-54" positionY="-9" width="128" height="89"/>
+        <element name="CalendarInfo" positionX="-54" positionY="18" width="128" height="74"/>
+    </elements>
+</model>
