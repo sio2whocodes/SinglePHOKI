@@ -104,7 +104,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="u6U-3c-8ob">
-                                                    <rect key="frame" x="0.0" y="0.0" width="90" height="128"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="71" height="128"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LMh-Xi-fHh">
                                                     <rect key="frame" x="31.5" y="53.5" width="8.5" height="21.5"/>
@@ -116,7 +116,7 @@
                                             <constraints>
                                                 <constraint firstItem="LMh-Xi-fHh" firstAttribute="centerY" secondItem="dc0-3K-GOd" secondAttribute="centerY" id="04q-f7-BKP"/>
                                                 <constraint firstItem="u6U-3c-8ob" firstAttribute="leading" secondItem="dc0-3K-GOd" secondAttribute="leading" id="Cea-0S-Y1d"/>
-                                                <constraint firstAttribute="trailing" secondItem="u6U-3c-8ob" secondAttribute="trailing" constant="-19" id="GVY-LV-lA5"/>
+                                                <constraint firstAttribute="trailing" secondItem="u6U-3c-8ob" secondAttribute="trailing" id="GVY-LV-lA5"/>
                                                 <constraint firstItem="u6U-3c-8ob" firstAttribute="top" secondItem="dc0-3K-GOd" secondAttribute="top" id="QIn-e2-bWe"/>
                                                 <constraint firstItem="LMh-Xi-fHh" firstAttribute="centerX" secondItem="dc0-3K-GOd" secondAttribute="centerX" id="Tg6-gI-1L7"/>
                                                 <constraint firstAttribute="bottom" secondItem="u6U-3c-8ob" secondAttribute="bottom" id="tvH-dg-fFj"/>
@@ -170,10 +170,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EqE-1A-8eW">
-                                <rect key="frame" x="354" y="705" width="40" height="40"/>
+                                <rect key="frame" x="344" y="743" width="55" height="55"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="Kf0-uX-euX"/>
-                                    <constraint firstAttribute="width" constant="40" id="L8u-mX-tV9"/>
+                                    <constraint firstAttribute="height" constant="55" id="Kf0-uX-euX"/>
+                                    <constraint firstAttribute="width" constant="55" id="L8u-mX-tV9"/>
                                 </constraints>
                                 <size key="titleShadowOffset" width="5" height="5"/>
                                 <state key="normal">
@@ -193,14 +193,14 @@
                             <constraint firstItem="Hp0-g6-Xdm" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="3RD-7P-MPQ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="bce-0v-CJG" secondAttribute="top" constant="50" id="EeG-3f-F6V"/>
                             <constraint firstItem="LMY-6u-xGL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Eo0-Zv-y2W"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="EqE-1A-8eW" secondAttribute="bottom" constant="68" id="Nb2-Pf-SEK"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="EqE-1A-8eW" secondAttribute="bottom" constant="15" id="Nb2-Pf-SEK"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="uCj-Ug-bIf" secondAttribute="trailing" constant="20" id="PFa-r8-k2e"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bce-0v-CJG" secondAttribute="trailing" id="PXq-sN-JvT"/>
                             <constraint firstItem="hF8-qX-lcZ" firstAttribute="top" secondItem="LMY-6u-xGL" secondAttribute="bottom" id="QYn-go-AuW"/>
                             <constraint firstItem="Hp0-g6-Xdm" firstAttribute="top" secondItem="bce-0v-CJG" secondAttribute="bottom" constant="-32" id="Qbu-me-d77"/>
                             <constraint firstItem="IbF-g3-wp7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="WsS-mG-2dX"/>
                             <constraint firstItem="hF8-qX-lcZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="X0c-2o-whP"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="EqE-1A-8eW" secondAttribute="trailing" constant="20" id="aqk-KC-Ge5"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="EqE-1A-8eW" secondAttribute="trailing" constant="15" id="aqk-KC-Ge5"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hF8-qX-lcZ" secondAttribute="trailing" id="cAu-oY-ANf"/>
                             <constraint firstItem="bce-0v-CJG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="kuw-RR-Qqy"/>
                             <constraint firstItem="LMY-6u-xGL" firstAttribute="top" secondItem="xKG-8D-ryG" secondAttribute="bottom" constant="17" id="md1-wh-BjZ"/>
@@ -211,7 +211,7 @@
                             <constraint firstItem="Hp0-g6-Xdm" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="znR-TN-DuT"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="ZeS-Bp-YKa"/>
+                    <tabBarItem key="tabBarItem" title="calendar" image="calendar" catalog="system" selectedImage="calendar" id="ZeS-Bp-YKa"/>
                     <navigationItem key="navigationItem" id="gwY-Lc-LOW"/>
                     <connections>
                         <outlet property="CalendarLabel" destination="Hp0-g6-Xdm" id="7ga-kk-7oV"/>
@@ -324,10 +324,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y7J-jY-AdI">
-                                <rect key="frame" x="354" y="748" width="40" height="40"/>
+                                <rect key="frame" x="344" y="738" width="50" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="40" id="7gE-lh-bsk"/>
-                                    <constraint firstAttribute="height" constant="40" id="osH-wn-5az"/>
+                                    <constraint firstAttribute="width" constant="50" id="7gE-lh-bsk"/>
+                                    <constraint firstAttribute="height" constant="50" id="osH-wn-5az"/>
                                 </constraints>
                                 <size key="titleShadowOffset" width="5" height="5"/>
                                 <state key="normal">
@@ -435,7 +435,7 @@
                             <constraint firstItem="64I-N1-o5o" firstAttribute="top" secondItem="CzY-CY-CXP" secondAttribute="top" constant="48" id="w2q-pD-53W"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="a8O-ZW-CiR"/>
+                    <tabBarItem key="tabBarItem" title="setting" image="moon.stars" catalog="system" selectedImage="moon.stars" id="a8O-ZW-CiR"/>
                     <navigationItem key="navigationItem" id="Dwl-UJ-6l4"/>
                     <connections>
                         <outlet property="saveButton" destination="paU-8S-iYc" id="3hl-Wl-Zi0"/>
@@ -452,6 +452,8 @@
         <image name="addbtn" width="100" height="100"/>
         <image name="arrow.left" catalog="system" width="128" height="98"/>
         <image name="arrow.right" catalog="system" width="128" height="98"/>
+        <image name="calendar" catalog="system" width="128" height="106"/>
+        <image name="moon.stars" catalog="system" width="128" height="124"/>
         <image name="야이건좀" width="1536" height="2048"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

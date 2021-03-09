@@ -106,9 +106,9 @@ class ViewController: UIViewController {
     func addButtonShadow(){
         addButton.layer.shadowColor = UIColor.black.cgColor
         addButton.layer.masksToBounds = false
-        addButton.layer.shadowOffset = CGSize(width: 0, height: 4)
-        addButton.layer.shadowRadius = 5
-        addButton.layer.shadowOpacity = 0.3
+        addButton.layer.shadowOffset = CGSize(width: 0, height: 2)
+        addButton.layer.shadowRadius = 2
+        addButton.layer.shadowOpacity = 0.2
     }
     
     //화면 방향 전환 (landscape 지원안함)

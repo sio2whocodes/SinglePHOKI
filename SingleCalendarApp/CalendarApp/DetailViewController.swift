@@ -73,8 +73,8 @@ class DetailViewController: UIViewController {
         addButton.layer.shadowColor = UIColor.black.cgColor
         addButton.layer.masksToBounds = false
         addButton.layer.shadowOffset = CGSize(width: 0, height: 3)
-        addButton.layer.shadowRadius = 3
-        addButton.layer.shadowOpacity = 0.3
+        addButton.layer.shadowRadius = 2
+        addButton.layer.shadowOpacity = 0.2
     }
     
     //뒤로가기 버튼
