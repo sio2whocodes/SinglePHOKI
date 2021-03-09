@@ -14,9 +14,9 @@ let context = appDelegate.persistentContainer.viewContext
 
 class ContentHelper {
     let entity = NSEntityDescription.entity(forEntityName: "Content", in: context)
-    let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Content")
     
     func fetchContentsAll(){
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Content")
         var contents = [Content]()
         do {
             contents = try context.fetch(fetchRequest) as! [Content]
@@ -39,7 +39,6 @@ class ContentHelper {
         } catch {
             print(error.localizedDescription)
         }
-        print(contentss)
         let content = contentss[0] //error
         return MyContent(date: content.date!, images: content.images!, memos: content.memos!, thumnail: UIImage(data: content.thumnail!)!)
     }
@@ -65,6 +64,7 @@ class ContentHelper {
     */
     
     func updateContent(mycontent: MyContent){
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Content")
         fetchRequest.predicate = NSPredicate(format: "date == %@", mycontent.date)
         do {
             let contents = try context.fetch(fetchRequest) as! [Content]
@@ -75,6 +75,7 @@ class ContentHelper {
             updateContent.setValue(mycontent.thumnail.jpegData(compressionQuality: 0.5), forKey: "thumnail")
             do {
                 try context.save()
+                print("update!")
             } catch {
                 print(error.localizedDescription)
             }
@@ -84,6 +85,7 @@ class ContentHelper {
     }
     
     func fetchContentThumnail(date: String){
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Content")
         fetchRequest.predicate = NSPredicate(format: "date == %@", date)
         do {
             let updateContents = try context.fetch(fetchRequest) as! [Content]
@@ -112,6 +114,7 @@ class ContentHelper {
     }
     
     func deleteAllContent(){
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Content")
         let delete = NSBatchDeleteRequest(fetchRequest: fetchRequest)
         do {
             try context.execute(delete)
@@ -121,20 +124,15 @@ class ContentHelper {
     }
     
     func deleteContent(mycontent: MyContent){
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Content")
         fetchRequest.predicate = NSPredicate(format: "date == %@", mycontent.date)
+        let delete = NSBatchDeleteRequest(fetchRequest: fetchRequest)
         do {
-            let contents = try context.fetch(fetchRequest) as! [Content]
-            let deleteContent = contents[0] as NSManagedObject
-            context.delete(deleteContent)
-            do {
-                try context.save()
-            } catch {
-                print(error.localizedDescription)
-            }
+            try context.execute(delete)
         } catch {
             print(error.localizedDescription)
         }
-        thumnails[mycontent.date] = nil
+        thumnails.removeValue(forKey: mycontent.date)
     }
 }
 

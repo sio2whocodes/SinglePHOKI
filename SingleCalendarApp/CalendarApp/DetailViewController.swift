@@ -44,8 +44,8 @@ class DetailViewController: UIViewController {
             print("B viewWillDisappear")
             myContent.thumnail = UIImage(data: myContent.images[0]!)!.getThumbnail()!
             contentHelper.updateContent(mycontent: myContent)
-            presentingViewController?.children[0].viewWillAppear(true)
         }
+        presentingViewController?.children[0].viewWillAppear(true)
     }
     
     @objc func handleLongPressGesture(_ gesture: UILongPressGestureRecognizer) {
@@ -85,10 +85,10 @@ class DetailViewController: UIViewController {
     //이미지 삭제
     func deleteImg(_: UIAlertAction){
         if myContent.images.count == 1 {
-            myContent.images.remove(at: idx)
-            myContent.memos.remove(at: idx)
+            myContent.images.removeAll()
+            myContent.memos.removeAll()
             contentHelper.deleteContent(mycontent: myContent)
-            dismiss(animated: true, completion: presentingViewController?.children[0].viewDidLoad)
+            dismiss(animated: true, completion: nil)
         } else {
             myContent.images.remove(at: idx)
             myContent.memos.remove(at: idx)
@@ -125,10 +125,11 @@ extension DetailViewController: UICollectionViewDataSource {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "detailcell", for: indexPath) as? ImageCell else {
             return UICollectionViewCell()
         }
+        cell.memoLabel.clipsToBounds = true
+        cell.memoLabel.layer.cornerRadius = 8
         cell.imgView.image = UIImage(data: myContent.images[indexPath.item]!)
         cell.imgView.layer.cornerRadius = 10
         cell.memoTextView.text = myContent.memos[indexPath.item]
-        cell.memoTextView.layer.cornerRadius = 0
         cell.memoTextView.tag = indexPath.item
         cell.button.tag = indexPath.item
         cell.button.addTarget(self, action: #selector(imgbtnClick(sender:)), for: .touchUpInside)
@@ -165,6 +166,7 @@ extension DetailViewController: UICollectionViewDataSource {
         let targetMemo = myContent.memos.remove(at: sourceIndexPath.item)
         myContent.images.insert(targetImage, at: destinationIndexPath.item)
         myContent.memos.insert(targetMemo, at: destinationIndexPath.item)
+        print("move!")
     }
     
 }
@@ -248,5 +250,6 @@ extension DetailViewController: UITextViewDelegate {
 class ImageCell: UICollectionViewCell {
     @IBOutlet weak var imgView: UIImageView!
     @IBOutlet weak var memoTextView: UITextView!
+    @IBOutlet weak var memoLabel: UILabel!
     @IBOutlet weak var button: UIButton!
 }

@@ -29,15 +29,15 @@ class ViewController: UIViewController {
         
     override func viewDidLoad() {
         super.viewDidLoad()
+        picker.delegate = self
         print("viewDidLoad")
         calendarInfoHelper.insertCalendarInfo(calInst: calendarInfo)
-//        calendarInfo = calendarInfoHelper.fetchCalendarInfo()
+        calendarInfo = calendarInfoHelper.fetchCalendarInfo()
         CalendarLabel.text = calendarInfo.title
         titleImageView.image = UIImage(data: calendarInfo.titleImage!)
         setMonthView()
         contentHelper.fetchContentsAll()
 //        contentHelper.deleteAllContent()
-        picker.delegate = self
         addButtonShadow()
         collectionView.reloadData()
     }
@@ -50,6 +50,9 @@ class ViewController: UIViewController {
         print("viewWillAppear")
         contentHelper.fetchContentsAll()
         collectionView.reloadData()
+        calendarInfo = calendarInfoHelper.fetchCalendarInfo()
+        CalendarLabel.text = calendarInfo.title
+        titleImageView.image = UIImage(data: calendarInfo.titleImage!)
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -203,9 +206,9 @@ extension ViewController: UICollectionViewDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showdetail" {
             if let vc = segue.destination as? DetailViewController {
+                vc.yearMonth = yymm
                 if let cell = sender as? CalendarCell {
                     vc.now = yymm + cell.dayOfMonth.text!
-                    vc.yearMonth = yymm
                     vc.date = cell.dayOfMonth.text!
                 }
             }

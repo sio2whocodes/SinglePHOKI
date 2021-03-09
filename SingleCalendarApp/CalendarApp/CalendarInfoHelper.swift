@@ -21,6 +21,7 @@ class CalendarInfoHelper {
             calInfo.setValue(calInst.id, forKey: "id")
             do {
                 try context.save()
+                print("save!")
             } catch {
                 print(error.localizedDescription)
             }
@@ -28,13 +29,16 @@ class CalendarInfoHelper {
     }
     
     func fetchCalendarInfo()->CalendarInfoInstance{
+        var calendarInst: CalendarInfoInstance = CalendarInfoInstance(titleImage: (UIImage(named: "야이건좀")?.jpegData(compressionQuality: 1))!)
+        var calendarInfo = [CalendarInfo]()
         do {
-            let calendarInfo = try context.fetch(fetchRequest)[0] as! CalendarInfo
-            return CalendarInfoInstance(title: calendarInfo.title!, titleImage: calendarInfo.titleImage!, id: calendarInfo.id!)
+            calendarInfo = try context.fetch(self.fetchRequest) as! [CalendarInfo]
         } catch {
             print(error.localizedDescription)
         }
-        return CalendarInfoInstance(title: "CALENDAR", titleImage: (UIImage(named: "bluecloud")?.jpegData(compressionQuality: 1)!)!, id: "id")
+        print("fetch!")
+        calendarInst = CalendarInfoInstance(title: calendarInfo[0].title!, titleImage: calendarInfo[0].titleImage!, id: calendarInfo[0].id!)
+        return calendarInst
     }
     
     func updateCalendarInfo(calInst: CalendarInfoInstance){
@@ -45,9 +49,19 @@ class CalendarInfoHelper {
             calendarInfo.setValue(calInst.titleImage, forKey: "titleImage")
             do {
                 try context.save()
+                print("update!\(calendarInfo)")
             } catch {
                 print(error.localizedDescription)
             }
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
+    
+    func deleteCalendarInfo(){
+        let delete = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+        do {
+            try context.execute(delete)
         } catch {
             print(error.localizedDescription)
         }
