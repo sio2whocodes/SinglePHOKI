@@ -16,7 +16,7 @@ class DetailViewController: UIViewController {
     
     let picker = UIImagePickerController()
     let contentHelper = ContentHelper()
-    var myContent = MyContent(date: "", images: [UIImage(named: "기현")?.jpegData(compressionQuality: 1)], memos: [""],thumnail: UIImage())
+    var myContent = MyContent(date: "", images: [UIImage(named: "bluecloud")?.jpegData(compressionQuality: 1)], memos: [""],thumnail: UIImage())
     var now = ""
     var yearMonth = ""
     var date = ""

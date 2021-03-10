@@ -23,7 +23,7 @@ class ViewController: UIViewController {
     let calendarHelper = CalendarHelper()
     let picker = UIImagePickerController()
     let contentHelper = ContentHelper()
-    var calendarInfo = CalendarInfoInstance(title: "KIHYUN CALENDAR", titleImage: (UIImage(named: "유기현트로피뿌숨")?.jpegData(compressionQuality: 1))!, id: "id")
+    var calendarInfo = CalendarInfoInstance(title: "MY CALENDAR", titleImage: (UIImage(named: "bluecloud")?.jpegData(compressionQuality: 1))!, id: "id")
     let calendarInfoHelper = CalendarInfoHelper()
     var now = ""
     var yymm = ""
