@@ -1,6 +1,6 @@
 # SinglePhotoCalendar
 iOS Photo Calendar App   
-using language : Swift   
+language : Swift   
 persistence data storage : Core Data    
 develop environment : Xcode    
 period : 2021.02.10 ~ 2021.03.09   
