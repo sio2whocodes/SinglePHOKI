@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var titleImageView: UIImageView!
     @IBOutlet weak var CalendarLabel: UILabel!
+    @IBOutlet weak var backgroundView: UIView!
     
     var selectedDate = Date()
     var totalDates = [String]()
@@ -31,6 +32,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         picker.delegate = self
         print("viewDidLoad")
+        backgroundView.layer.borderWidth = 0.3
+        backgroundView.layer.borderColor = UIColor.lightGray.cgColor
         calendarInfoHelper.insertCalendarInfo(calInst: calendarInfo)
         calendarInfo = calendarInfoHelper.fetchCalendarInfo()
         CalendarLabel.text = calendarInfo.title
@@ -150,7 +153,7 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
                           sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = (collectionView.frame.size.width)/8 + 5 // why not 7?
 //        let height = width * 10/7
-        let height = (collectionView.frame.size.height)/7
+        let height = (collectionView.frame.size.height)/6
         return CGSize(width: width, height: height)
     }
     
@@ -169,7 +172,7 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                          layout collectionViewLayout: UICollectionViewLayout,
                          insetForSectionAt section: Int) -> UIEdgeInsets {
-        let inset = UIEdgeInsets(top: 1, left: 1, bottom: 1, right: 1)
+        let inset = UIEdgeInsets(top: 2, left: 1, bottom: 1, right: 1)
         return inset
     }
 }
@@ -224,12 +227,12 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
                 //오늘 이미지 있는데 추가할때
                 print(now)
                 var nowContent = contentHelper.fetchContent(date: now)
-                nowContent.images.append(image.jpegData(compressionQuality: 0.1))
+                nowContent.images.append(image.jpegData(compressionQuality: 1))
                 nowContent.memos.append("")
                 let newContent = MyContent(date: now, images: nowContent.images, memos: nowContent.memos, thumnail: nowContent.thumnail)
                 contentHelper.updateContent(mycontent: newContent)
             } else {
-                let mycontent = MyContent(date: now, images: [image.jpegData(compressionQuality: 0.1)], memos: [""], thumnail: image.getThumbnail()!)
+                let mycontent = MyContent(date: now, images: [image.jpegData(compressionQuality: 1)], memos: [""], thumnail: image.getThumbnail()!)
                 contentHelper.insertContent(mycontent: mycontent)
             }
             contentHelper.fetchContentThumnail(date: now)

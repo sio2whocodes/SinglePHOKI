@@ -16,7 +16,7 @@ class DetailViewController: UIViewController {
     
     let picker = UIImagePickerController()
     let contentHelper = ContentHelper()
-    var myContent = MyContent(date: "", images: [UIImage(named: "기현")?.jpegData(compressionQuality: 0.1)], memos: [""],thumnail: UIImage())
+    var myContent = MyContent(date: "", images: [UIImage(named: "기현")?.jpegData(compressionQuality: 1)], memos: [""],thumnail: UIImage())
     var now = ""
     var yearMonth = ""
     var date = ""
@@ -206,11 +206,11 @@ extension DetailViewController: UIImagePickerControllerDelegate, UINavigationCon
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage{
             //사진 추가
             if isAdd {
-                self.myContent.images.append(image.jpegData(compressionQuality: 0.1))
+                self.myContent.images.append(image.jpegData(compressionQuality: 1))
                 self.myContent.memos.append("")
             } else {
                 //사진 변경
-                self.myContent.images[idx] = image.jpegData(compressionQuality: 0.1)
+                self.myContent.images[idx] = image.jpegData(compressionQuality: 1)
                 self.myContent.thumnail = UIImage(data: self.myContent.images[0]!)!.getThumbnail()!
             }
             contentHelper.updateContent(mycontent: myContent)
@@ -231,7 +231,7 @@ extension DetailViewController: UITextViewDelegate {
     }
     
     @objc func keyBoardWillShow(_ sender: Notification){
-        self.view.frame.origin.y = -150
+        self.view.frame.origin.y = -200
     }
     
     @objc func keyBoardWillHide(_ sender: Notification){
