@@ -28,4 +28,4 @@ iPhone 11 Pro
 - 사진별 메모
 
 
-***example images used in screen shots are from Pinterest***
+***example images used in screen shots are from [Pinterest](https://www.pinterest.co.kr/pin/804666658419144024)***
