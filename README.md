@@ -6,7 +6,7 @@ develop environment : Xcode
 period : 2021.02.10 ~ 2021.03.09   
 more -> [my tistory](https://sio2whocode.tistory.com)
 
-## Screen Shots
+## App functionality description with Screen Shots
 iPhone 11 Pro   
 <br/>
 <img src="https://user-images.githubusercontent.com/41771874/110598559-3d2f9100-81c5-11eb-9b6c-ff58ad015283.png" width = "200"/>
