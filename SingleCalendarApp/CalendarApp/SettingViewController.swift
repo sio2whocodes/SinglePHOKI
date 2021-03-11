@@ -13,7 +13,7 @@ class SettingViewController: UIViewController {
     @IBOutlet weak var titleLabel: UITextField!
     @IBOutlet weak var titleImageView: UIImageView!
     @IBOutlet weak var saveButton: UIButton!
-    var calendarInfo = CalendarInfoInstance(titleImage: UIImage(named: "bludcloud")!.jpegData(compressionQuality: 1)!)
+    var calendarInfo = CalendarInfoInstance(titleImage: UIImage(named: "bluecloud")!.jpegData(compressionQuality: 1)!)
     let calendarInfoHelper = CalendarInfoHelper()
     let picker = UIImagePickerController()
 

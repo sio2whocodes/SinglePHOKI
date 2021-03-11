@@ -17,6 +17,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var titleImageView: UIImageView!
     @IBOutlet weak var CalendarLabel: UILabel!
     @IBOutlet weak var backgroundView: UIView!
+    @IBOutlet weak var dayStackView: UIStackView!
+    
     
     var selectedDate = Date()
     var totalDates = [String]()
@@ -32,8 +34,33 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         picker.delegate = self
         print("viewDidLoad")
-        backgroundView.layer.borderWidth = 0.3
-        backgroundView.layer.borderColor = UIColor.lightGray.cgColor
+        collectionView.layer.cornerRadius = 5
+        collectionView.layer.shadowColor = UIColor.darkGray.cgColor
+        collectionView.layer.shadowOffset = CGSize(width: 0, height: 0)
+        collectionView.layer.shadowRadius = 5
+        collectionView.layer.shadowOpacity = 0.2
+        
+        titleImageView.layer.cornerRadius = 10
+        titleImageView.layer.shadowColor = UIColor.darkGray.cgColor
+        titleImageView.layer.shadowOffset = CGSize(width: 0, height: 2)
+        titleImageView.layer.shadowRadius = 5
+        titleImageView.layer.shadowOpacity = 0.2
+        
+        dayStackView.layer.cornerRadius = 5
+        dayStackView.layer.shadowColor = UIColor.darkGray.cgColor
+        dayStackView.layer.shadowOffset = CGSize(width: 0, height: 2)
+        dayStackView.layer.shadowRadius = 2
+        dayStackView.layer.shadowOpacity = 0.2
+        dayStackView.layer.masksToBounds = false
+        
+        backgroundView.layer.cornerRadius = 10
+        backgroundView.backgroundColor = UIColor.white
+        backgroundView.layer.shadowColor = UIColor.darkGray.cgColor
+        backgroundView.layer.shadowOffset = CGSize(width: 0, height: 0)
+        backgroundView.layer.shadowRadius = 5
+        backgroundView.layer.shadowOpacity = 0.2
+//        backgroundView.layer.borderWidth = 0.3
+//        backgroundView.layer.borderColor = UIColor.lightGray.cgColor
         calendarInfoHelper.insertCalendarInfo(calInst: calendarInfo)
         calendarInfo = calendarInfoHelper.fetchCalendarInfo()
         CalendarLabel.text = calendarInfo.title

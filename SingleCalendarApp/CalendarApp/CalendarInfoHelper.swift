@@ -29,7 +29,7 @@ class CalendarInfoHelper {
     }
     
     func fetchCalendarInfo()->CalendarInfoInstance{
-        var calendarInst: CalendarInfoInstance = CalendarInfoInstance(titleImage: (UIImage(named: "야이건좀")?.jpegData(compressionQuality: 1))!)
+        var calendarInst: CalendarInfoInstance = CalendarInfoInstance(titleImage: (UIImage(named: "bluecloud")?.jpegData(compressionQuality: 1))!)
         var calendarInfo = [CalendarInfo]()
         do {
             calendarInfo = try context.fetch(self.fetchRequest) as! [CalendarInfo]
