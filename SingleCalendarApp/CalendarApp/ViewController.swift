@@ -61,6 +61,7 @@ class ViewController: UIViewController {
         backgroundView.layer.shadowOpacity = 0.2
 //        backgroundView.layer.borderWidth = 0.3
 //        backgroundView.layer.borderColor = UIColor.lightGray.cgColor
+        
         calendarInfoHelper.insertCalendarInfo(calInst: calendarInfo)
         calendarInfo = calendarInfoHelper.fetchCalendarInfo()
         CalendarLabel.text = calendarInfo.title
@@ -219,7 +220,7 @@ extension ViewController: UICollectionViewDelegate {
     
     func openLibrary(){
         picker.sourceType = .photoLibrary
-        present(picker, animated: false, completion: nil)
+        present(picker, animated: true, completion: nil)
     }
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
