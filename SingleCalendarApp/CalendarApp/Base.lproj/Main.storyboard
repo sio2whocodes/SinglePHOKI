@@ -431,6 +431,22 @@
                                     <action selector="imgSelect:" destination="XME-8o-uYn" eventType="touchUpInside" id="Q5M-gg-qle"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="glN-Jf-8xd">
+                                <rect key="frame" x="84" y="433" width="51" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="backup"/>
+                                <connections>
+                                    <action selector="backup:" destination="XME-8o-uYn" eventType="touchUpInside" id="pKn-Ax-7Do"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6oj-IF-Cb6">
+                                <rect key="frame" x="249" y="433" width="49" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="restore"/>
+                                <connections>
+                                    <action selector="restore:" destination="XME-8o-uYn" eventType="touchUpInside" id="KXT-V5-Slz"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="CzY-CY-CXP"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>

@@ -16,6 +16,7 @@ class SettingViewController: UIViewController {
     var calendarInfo = CalendarInfoInstance(titleImage: UIImage(named: "bluecloud")!.jpegData(compressionQuality: 1)!)
     let calendarInfoHelper = CalendarInfoHelper()
     let picker = UIImagePickerController()
+    let contentHelper = ContentHelper()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +38,28 @@ class SettingViewController: UIViewController {
         calendarInfoHelper.updateCalendarInfo(calInst: calendarInfo)
     }
     
+    @IBAction func backup(_ sender: Any) {
+        let fileManager = FileManager.default
+        let documentURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask)[0]
+         do {
+            try appDelegate.persistentContainer.copyPersistentStores(to: documentURL, overwriting: true)
+         } catch {
+            print(error)
+         }
+    }
+    
+    @IBAction func restore(_ sender: Any) {
+        let fileManager = FileManager.default
+        let documentURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask)[0]
+        do {
+           try appDelegate.persistentContainer.restorePersistentStore(from: documentURL)
+        } catch {
+           print(error)
+        }
+        thumnails.removeAll()
+    }
+    
+    
 }
 
 extension SettingViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
@@ -48,6 +71,8 @@ extension SettingViewController: UIImagePickerControllerDelegate, UINavigationCo
         }
         dismiss(animated: true, completion: self.viewDidLoad)
     }
+    
+    
 }
 
 extension SettingViewController: UITextFieldDelegate {

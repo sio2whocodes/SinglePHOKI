@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DE77632226157A4900B91311 /* PSCHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE77632126157A4900B91311 /* PSCHelper.swift */; };
 		DE8EE60325E2025300A13BA6 /* ContentHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8EE60225E2025300A13BA6 /* ContentHelper.swift */; };
 		DEBB471225F487D300D89277 /* CalendarInfo+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBB471025F487D300D89277 /* CalendarInfo+CoreDataClass.swift */; };
 		DEBB471325F487D300D89277 /* CalendarInfo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBB471125F487D300D89277 /* CalendarInfo+CoreDataProperties.swift */; };
@@ -29,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DE77632126157A4900B91311 /* PSCHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSCHelper.swift; sourceTree = "<group>"; };
 		DE8EE60225E2025300A13BA6 /* ContentHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentHelper.swift; sourceTree = "<group>"; };
 		DEBB471025F487D300D89277 /* CalendarInfo+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CalendarInfo+CoreDataClass.swift"; sourceTree = "<group>"; };
 		DEBB471125F487D300D89277 /* CalendarInfo+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CalendarInfo+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 				DEC9CF7C25D0EA1C009EE2FC /* LaunchScreen.storyboard */,
 				DEC9CF7F25D0EA1C009EE2FC /* Info.plist */,
 				DEC9D02C25D788FE009EE2FC /* Model.xcdatamodeld */,
+				DE77632126157A4900B91311 /* PSCHelper.swift */,
 			);
 			path = CalendarApp;
 			sourceTree = "<group>";
@@ -192,6 +195,7 @@
 				DEE3BA2C25DA84F600F75A8A /* MyContent.swift in Sources */,
 				DEBB471625F4882600D89277 /* CalendarInfoHelper.swift in Sources */,
 				DEC9CFAF25D4EE5B009EE2FC /* DetailViewController.swift in Sources */,
+				DE77632226157A4900B91311 /* PSCHelper.swift in Sources */,
 				DEC9D04525D796F8009EE2FC /* Content+CoreDataClass.swift in Sources */,
 				DEC9CF7425D0EA19009EE2FC /* SceneDelegate.swift in Sources */,
 				DEC9CF8725D10429009EE2FC /* CalendarCell.swift in Sources */,
