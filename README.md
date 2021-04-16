@@ -1,4 +1,4 @@
-# (single)PHOKI : SinglePhotoCalendar
+# single PHOKI : SinglePhotoCalendar
 iOS Photo Calendar App   
 language : Swift   
 persistence data storage : Core Data    
