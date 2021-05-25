@@ -52,11 +52,11 @@ class SettingViewController: UIViewController {
         let fileManager = FileManager.default
         let documentURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask)[0]
         do {
-           try appDelegate.persistentContainer.restorePersistentStore(from: documentURL)
+            try appDelegate.persistentContainer.restorePersistentStore(from: documentURL)
+            thumnails.removeAll()
         } catch {
-           print(error)
+            print(error)
         }
-        thumnails.removeAll()
     }
     
     
